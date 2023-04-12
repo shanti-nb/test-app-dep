@@ -3,7 +3,7 @@ set -e
 
 ### Configuration ###
 
-SERVER=myappuser@yourserver.com
+SERVER=ubuntu@54.251.10.54
 APP_DIR=/var/www/myapp
 KEYFILE=
 REMOTE_SCRIPT_PATH=/tmp/deploy-myapp.sh

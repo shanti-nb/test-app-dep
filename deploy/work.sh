@@ -16,12 +16,12 @@ RESTART_ARGS=
 set -x
 
 # Pull latest code
-if [[ -e test-app-dep/code ]]; then
-  cd test-app-dep/code
+if [[ -e test-app-dep ]]; then
+  cd test-app-dep
   git pull
 else
-  git clone https://github.com/shanti-nb/test-app-dep.git test-app-dep/code
-  cd test-app-dep/code
+  git clone https://github.com/shanti-nb/test-app-dep.git test-app-dep
+  cd test-app-dep
 fi
 
 # Install dependencies
@@ -29,4 +29,4 @@ npm install --production
 npm prune --production
 
 # Restart app
-passenger-config restart-app --ignore-app-not-running --ignore-passenger-not-running $RESTART_ARGS $APP_DIR/code
+passenger-config restart-app --ignore-app-not-running --ignore-passenger-not-running $RESTART_ARGS $APP_DIR
