@@ -5,7 +5,7 @@ set -e
 
 APP_DIR=/var/www/test-app-dep
 GIT_URL=https://github.com/shanti-nb/test-app-dep.git
-RESTART_ARGS=
+RESTART_ARGS=npm run start
 
 # Uncomment and modify the following if you installed Passenger from tarball
 #export PATH=/path-to-passenger/bin:$PATH
@@ -29,4 +29,4 @@ npm install --production
 npm prune --production
 
 # Restart app
-passenger-config restart-app --ignore-app-not-running --ignore-passenger-not-running $RESTART_ARGS $APP_DIR
+restart-app --ignore-app-not-running --ignore-passenger-not-running $RESTART_ARGS 
