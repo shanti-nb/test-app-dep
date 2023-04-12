@@ -1,0 +1,23 @@
+{
+  "name": "test-app-dep",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node sever.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shanti-nb/test-app-dep.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shanti-nb/test-app-dep/issues"
+  },
+  "homepage": "https://github.com/shanti-nb/test-app-dep#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
