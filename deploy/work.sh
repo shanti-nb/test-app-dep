@@ -20,7 +20,7 @@ if [[ -e test-app-dep ]]; then
   cd test-app-dep
   git pull
 else
-  git clone https://github.com/shanti-nb/test-app-dep.git
+  git clone https://github.com/shanti-nb/test-app-dep.git test-app-dep
   cd test-app-dep
 fi
 
