@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 
 // server configuration
-const PORT = 4000;
+const PORT = 4042;
 
 // create a route for the app
 app.get('/hello', (req, res) => {
