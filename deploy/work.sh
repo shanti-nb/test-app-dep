@@ -3,7 +3,7 @@ set -e
 
 ### Configuration ###
 
-APP_DIR=/var/www/test-app-dep
+APP_DIR=test-app-dep
 GIT_URL=https://github.com/shanti-nb/test-app-dep.git
 RESTART_ARGS=
 
@@ -20,7 +20,7 @@ if [[ -e $APP_DIR ]]; then
   cd $APP_DIR
   git pull
 else
-  git clone $GIT_URL $APP_DIR
+  git clone $GIT_URL
   cd $APP_DIR
 fi
 
@@ -29,4 +29,4 @@ npm install --production
 npm prune --production
 
 # Restart app
-passenger-config restart-app --ignore-app-not-running --ignore-passenger-not-running $RESTART_ARGS $APP_DIR
+ssh ubuntu@54.251.10.54 "source ~/.nvm/nvm.sh && cd test-app-dep && git pull origin main && npm ci && pm2 restart 15"
