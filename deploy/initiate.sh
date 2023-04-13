@@ -4,9 +4,9 @@ set -e
 ### Configuration ###
 
 SERVER=ubuntu@54.251.10.54
-APP_DIR=/var/www/myapp
+APP_DIR=/var/www/test-app-dep
 KEYFILE=
-# REMOTE_SCRIPT_PATH=/tmp/deploy-myapp.sh
+REMOTE_SCRIPT_PATH=/tmp/deploy-myapp.sh
 
 
 ### Library ###
@@ -26,7 +26,7 @@ else
   KEYARG=
 fi
 
-run scp $KEYARG deploy/work.sh $SERVER
+run scp $KEYARG deploy/work.sh $SERVER:$REMOTE_SCRIPT_PATH
 echo
 echo "---- Running deployment script on remote server ----"
-ssh ubuntu@54.251.10.54 "source ~/.nvm/nvm.sh && cd test-app-dep && git pull origin main && npm ci && pm2 restart 14"
+run ssh $KEYARG $SERVER bash $REMOTE_SCRIPT_PATH
