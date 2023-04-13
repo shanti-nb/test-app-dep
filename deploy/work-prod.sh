@@ -20,7 +20,7 @@ if [[ -e $APP_DIR ]]; then
   cd $APP_DIR
   git pull
 else
-  git clone $GIT_URL
+  git clone $GIT_URL $APP_DIR
   cd $APP_DIR
 fi
 

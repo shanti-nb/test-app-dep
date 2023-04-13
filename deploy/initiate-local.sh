@@ -26,9 +26,7 @@ else
   KEYARG=
 fi
 
-run scp $KEYARG deploy/work.sh $SERVER
+run scp $KEYARG deploy/work-prod.sh $SERVER
 echo
 echo "---- Running deployment script on remote server ----"
-# ssh ubuntu@54.251.10.54 "source ~/.nvm/nvm.sh && cd test-app-dep && git pull origin main && npm ci && pm2 start npm --name my_app_demo -- start"
-
 ssh ubuntu@54.251.10.54 "source ~/.nvm/nvm.sh && cd test-app-dep && git pull origin main && npm ci && pm2 start npm --name my_app_demo -- start"
